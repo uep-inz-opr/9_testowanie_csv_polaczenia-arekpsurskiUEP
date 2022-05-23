@@ -30,5 +30,5 @@ class MenadzerPolaczen:
     return max(self.data_dict.items(), key= lambda x: x[1])
   
 if __name__ == "__main__":
-  menedzer_polaczen = MenadzerPolaczen(input())
-  print(menedzer_polaczen.pobierz_najczesciej_dzwoniacego()) 
+  mp = MenadzerPolaczen(input())
+  print(mp.pobierz_najczesciej_dzwoniacego()) 
