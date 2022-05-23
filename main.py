@@ -2,6 +2,12 @@ import csv
 import unittest
 from unittest import TestCase
 
+class SprawdzDzwoniacegoTest(TestCase):
+  def test_czy_abonent_najczesciej_dzwoniacy_rozpoznany_poprawnie(self):
+    mp = MenadzerPolaczen("phoneCalls.csv")
+    wynik = mp.pobierz_najczesciej_dzwoniacego()
+    self.assertEqual((226,5), wynik)
+    
 class MenadzerPolaczen:
   def __init__(self, filename):
     self.filename = filename
@@ -26,9 +32,3 @@ class MenadzerPolaczen:
 if __name__ == "__main__":
   menedzer_polaczen = MenadzerPolaczen(input())
   print(menedzer_polaczen.pobierz_najczesciej_dzwoniacego()) 
-
-class SprawdzDzwoniacegoTest(TestCase):
-  def test_czy_abonent_najczesciej_dzwoniacy_rozpoznany_poprawnie(self):
-    mp = MenadzerPolaczen("phoneCalls.csv")
-    wynik = mp.pobierz_najczesciej_dzwoniacego()
-    self.assertEqual((226,5), wynik)
